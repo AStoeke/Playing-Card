@@ -1,0 +1,96 @@
+import java.util.Random;
+public class PlayingCard
+{
+    int cardNum, cardSuit;
+    String num, suit;
+    Random rand = new Random();
+    
+    public PlayingCard() {
+        shuffle();
+    }
+    
+    public int getNum() {
+        cardNum = rand.nextInt(13) + 1;
+        return cardNum;
+    }
+    
+    public int getSuit() {
+        cardSuit = rand.nextInt(4) + 1;
+        return cardSuit;
+    }
+    
+    public void shuffle() {
+        getNum();
+        getSuit();
+        whatNum();
+        whatSuit();
+    }
+    
+    public String whatNum() {
+        if(cardNum == 1) {
+            num = "Ace";
+        }
+        else if(cardNum == 2) {
+            num = "Two";
+        }
+        else if(cardNum == 3) {
+            num = "Three";
+        }
+        else if(cardNum == 4) {
+            num = "Four";
+        }
+        else if(cardNum == 5) {
+            num = "Five";
+        }
+        else if(cardNum == 6) {
+            num = "Six";
+        }
+        else if(cardNum == 7) {
+            num = "Seven";
+        }
+        else if(cardNum == 8) {
+            num = "Eight";
+        }
+        else if(cardNum == 9) {
+            num = "Nine";
+        }
+        else if(cardNum == 10) {
+            num = "Ten";
+        }
+        else if(cardNum == 11) {
+            num = "Jack";
+        }
+        else if(cardNum == 12) {
+            num = "Queen";
+        }
+        else {
+            num = "King";
+        }
+        
+        return num;
+    }
+    
+    public int getValue() {
+        return cardNum;
+    }
+    
+    public String whatSuit() {
+        if(cardSuit == 1) {
+            suit = "Hearts";
+        }
+        else if(cardSuit == 2) {
+            suit = "Spades";
+        }
+        else if(cardSuit == 3) {
+            suit = "Diamonds";
+        }
+        else {
+            suit = "Clubs";
+        }
+        return suit;
+    }
+    
+    public String toString() {
+        return "\n" + num + " of " + suit + "\n";
+    }
+}
