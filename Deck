@@ -1,0 +1,19 @@
+public class Deck
+{
+    public static void main (String[] args) {
+        PlayingCard card = new PlayingCard();
+        PlayingCard cardNew = new PlayingCard();
+        cardNew.shuffle();
+        card.shuffle();
+        
+        for(int x = 1; x <= 52; x++)
+        {
+           if(cardNew.getValue() == card.getValue()) {
+               cardNew.shuffle();
+           }
+           System.out.println(cardNew);
+           card = cardNew;
+           cardNew.shuffle();
+        }
+    }
+}
